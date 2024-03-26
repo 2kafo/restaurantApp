@@ -1,17 +1,23 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 
+const users = [
+  { username: 'john_doe', password: 'password123', fullName: 'John Doe' },
+  { username: 'jane_doe', password: 'password456', fullName: 'Jane Doe' }
+];
+
 export default function HomePageScreen({ navigation }) {
-console.log(navigation)
+  // const { users } = route.params; // Extract users array from route params
+
 
   return (
     <View style={styles.container}>
       <Text>Are You Knew to this Application?</Text>
       <View style={styles.btnGroup}>
-        <Pressable style={styles.btn1} onPress={() => navigation.navigate('RegistrationPage')}>
+        <Pressable style={styles.btn1} onPress={() => navigation.navigate('RegistrationPage',{users:users})}>
           <Text style={{ color: '#fff' }}> Register Here</Text>
         </Pressable>
-        <Pressable style={styles.btn2} onPress={() => navigation.navigate('LogInPage')}>
+        <Pressable style={styles.btn2} onPress={() => navigation.navigate('LogInPage', {users:users})}>
           <Text style={{ color: '#fff' }}> Log in</Text>
         </Pressable>
       </View>

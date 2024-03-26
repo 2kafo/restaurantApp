@@ -5,7 +5,7 @@ import React from 'react'
 import HomePageScreen from '../screens/HomePageScreen';
 import RegistrationPage from '../screens/RegistrationPage'
 import LogInPage from '../screens/LogInPage';
-
+import WelcomeScreen from '../screens/WelcomeScreen';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -45,7 +45,13 @@ export default function HomeStack() {
             headerTitle:'LogInPage form'
            }}
            />
-           
+            <Stack.Screen 
+           name='WelcomeScreen' 
+           component={WelcomeScreen} 
+           options={{
+            headerTitle:'welcome landing page'
+           }}
+           />
         </Stack.Navigator>
  
   )
